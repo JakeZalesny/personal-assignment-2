@@ -5,6 +5,6 @@ const swaggerDocument = require('../swagger-output.json');
 
 router.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-router.use('/', require('./contacts'))
+router.use('/', require('./routes'));
 
 module.exports = router;

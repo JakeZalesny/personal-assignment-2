@@ -12,7 +12,6 @@ const getAllMakeupProducts = async (req, res, next) => {
 
 const getSingleMakeupProduct = async (req, res) => {
   const productId = req.params.id.length === 24 ? new ObjectId(req.params.id) : req.params.id;
-    console.log(userId)
     const result = await mongodb
       .getDB()
       .db()

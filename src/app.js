@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongodb = require('./src/connect');
-const router = require('./src/routes')
+const mongodb = require('./connect.js');
+const router = require('./routes')
 
 const port = process.env.PORT || 8080;
 const app = express();

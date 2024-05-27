@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-const contactsController = require('../controlers/contacts');
+const makeupProductsController = require('../controlers/makeup');
 
-router.get('/', contactsController.getAllContacts);
+router.get('/', makeupProductsController.getAllMakeupProducts);
 
-router.get('/contacts', contactsController.getAllContacts);
+router.get('/contacts', makeupProductsController.getAllMakeupProducts);
 
-router.get('/:id', contactsController.getSingleContact);
+router.get('/:id', makeupProductsController.getSingleMakeupProduct);
 
-router.post('/', contactsController.createContact);
+router.post('/', makeupProductsController.createMakeupProduct);
 
-router.put('/:id', contactsController.updateContact);
+router.put('/:id', makeupProductsController.updateMakeupProduct);
 
-router.delete('/:id', contactsController.deleteContact);
+router.delete('/:id', makeupProductsController.deleteMakeupProduct);
 
 module.exports = router;
