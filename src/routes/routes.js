@@ -10,7 +10,7 @@ const makeupProductsController = require('../controlers/makeup');
 
 router.get('/', makeupProductsController.getAllMakeupProducts);
 
-router.get('/contacts', makeupProductsController.getAllMakeupProducts);
+router.get('/makeup', makeupProductsController.getAllMakeupProducts);
 
 router.get('/:id', makeupProductsController.getSingleMakeupProduct);
 
