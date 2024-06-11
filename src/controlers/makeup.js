@@ -28,10 +28,21 @@ const getSingleMakeupProduct = async (req, res, next) => {
 const createMakeupProduct = async (req, res, next) => {
   try {
       const product = {
-          name: req.body.name,
-          brand: req.body.brand,
-          ingredients: req.body.ingredients,
-          score: req.body.score
+        name: req.body.name,
+        brand: req.body.brand,
+        category: req.body.category,
+        price: req.body.price,
+        shade: req.body.shade,
+        size: req.body.size,
+        ingredients: req.body.ingredients,
+        skin_type: req.body.skin_type,
+        finish: req.body.finish,
+        cruelty_free: req.body.cruelty_free,
+        vegan: req.body.vegan,
+        rating: req.body.rating,
+        number_of_reviews: req.body.number_of_reviews,
+        availability: req.body.availability, 
+        link_to_product_page: req.body.link_to_product_page
       };
       const response = await mongodb.getDB().db().collection('makeup').insertOne(product);
       if (response.acknowledged) {
