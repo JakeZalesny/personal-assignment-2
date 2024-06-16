@@ -7,17 +7,28 @@ router.get('/profile', requiresAuth(), (req, res) => {
 });
 
 const makeupProductsController = require('../controlers/makeup');
+const hairProductsController = require('../controlers/hair');
 
-router.get('/', makeupProductsController.getAllMakeupProducts);
+router.get('/', requiresAuth(), makeupProductsController.getAllMakeupProducts);
+
+router.get('/hair', requiresAuth(), hairProductsController.getAllHairProducts);
 
 router.get('/makeup', makeupProductsController.getAllMakeupProducts);
 
-router.get('/:id', makeupProductsController.getSingleMakeupProduct);
+router.get('/hair/:id', hairProductsController.getSingleHairProduct);
 
-router.post('/', makeupProductsController.createMakeupProduct);
+router.get('/makeup/:id', makeupProductsController.getSingleMakeupProduct);
 
-router.put('/:id', makeupProductsController.updateMakeupProduct);
+router.post('/hair/', hairProductsController.createHairProduct);
 
-router.delete('/:id', makeupProductsController.deleteMakeupProduct);
+router.post('/makeup/', makeupProductsController.createMakeupProduct);
+
+router.put('/hair/:id', hairProductsController.updateHairProduct);
+
+router.put('/makeup/:id', makeupProductsController.updateMakeupProduct);
+
+router.delete('/hair/:id', hairProductsController.deleteHairProduct);
+
+router.delete('/makeup/:id', makeupProductsController.deleteMakeupProduct);
 
 module.exports = router;

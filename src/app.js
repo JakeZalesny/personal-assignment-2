@@ -10,10 +10,10 @@ const app = express();
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: 'a long, randomly-generated string stored in env',
-  baseURL: 'http://localhost:3000',
-  clientID: 'gobpiUf7Lh3fZ5U8DZ6UiiI13pP5W7EU',
-  issuerBaseURL: 'https://dev-5r5raews4dzcwvlk.us.auth0.com'
+  secret: process.env.SECRET,
+  baseURL: process.env.BASE_URL || 'http://localhost:3000',
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.ISSUER_URL
 };
 
 app

@@ -55,7 +55,7 @@ const createHairProduct = async (req, res, next) => {
     }
   };
 
-  const updateMakeupProduct = async (req, res, next) => {
+  const updateHairProduct = async (req, res, next) => {
     try {
         const productId = req.params.id.length === 24 ? new ObjectId(req.params.id) : req.params.id;
         const product = {
@@ -81,4 +81,21 @@ const createHairProduct = async (req, res, next) => {
         next(error);
     }
   };
-  
+
+  const deleteHairProduct = async (req, res, next) => {
+    try {
+        const productId = req.params.id.length === 24 ? new ObjectId(req.params.id) : req.params.id;
+        const result = await mongodb.getDB().db().collection('hair').deleteOne({ _id: productId });
+        res.status(200).json(result);
+    } catch (error) {
+        next(error);
+    }
+  };
+
+module.exports = {
+    getAllHairProducts,
+    getSingleHairProduct,
+    createHairProduct,
+    updateHairProduct,
+    deleteHairProduct
+};

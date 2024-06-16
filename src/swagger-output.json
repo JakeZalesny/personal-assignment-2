@@ -8,9 +8,19 @@
   "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
-    "http", "https"
+    "http"
   ],
   "paths": {
+    "/profile": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/": {
       "get": {
         "description": "",
@@ -22,38 +32,17 @@
             "description": "OK"
           }
         }
-      },
-      "post": {
+      }
+    },
+    "/hair": {
+      "get": {
         "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "brand": {
-                  "example": "any"
-                },
-                "ingredients": {
-                  "example": "any"
-                },
-                "score": {
-                  "example": "any"
-                }
-              }
-            }
-          }
+        "produces": [
+          "application/json"
         ],
         "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -71,7 +60,114 @@
         }
       }
     },
-    "/{id}": {
+    "/hair/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "brand": {
+                  "example": "any"
+                },
+                "category": {
+                  "example": "any"
+                },
+                "price": {
+                  "example": "any"
+                },
+                "shade": {
+                  "example": "any"
+                },
+                "size": {
+                  "example": "any"
+                },
+                "ingredients": {
+                  "example": "any"
+                },
+                "skin_type": {
+                  "example": "any"
+                },
+                "finish": {
+                  "example": "any"
+                },
+                "cruelty_free": {
+                  "example": "any"
+                },
+                "vegan": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "number_of_reviews": {
+                  "example": "any"
+                },
+                "availability": {
+                  "example": "any"
+                },
+                "link_to_product_page": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/makeup/{id}": {
       "get": {
         "description": "",
         "produces": [
@@ -141,6 +237,144 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/hair/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "brand": {
+                  "example": "any"
+                },
+                "category": {
+                  "example": "any"
+                },
+                "price": {
+                  "example": "any"
+                },
+                "shade": {
+                  "example": "any"
+                },
+                "size": {
+                  "example": "any"
+                },
+                "ingredients": {
+                  "example": "any"
+                },
+                "skin_type": {
+                  "example": "any"
+                },
+                "finish": {
+                  "example": "any"
+                },
+                "cruelty_free": {
+                  "example": "any"
+                },
+                "vegan": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "number_of_reviews": {
+                  "example": "any"
+                },
+                "availability": {
+                  "example": "any"
+                },
+                "link_to_product_page": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/makeup/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "brand": {
+                  "example": "any"
+                },
+                "category": {
+                  "example": "any"
+                },
+                "price": {
+                  "example": "any"
+                },
+                "shade": {
+                  "example": "any"
+                },
+                "size": {
+                  "example": "any"
+                },
+                "ingredients": {
+                  "example": "any"
+                },
+                "skin_type": {
+                  "example": "any"
+                },
+                "finish": {
+                  "example": "any"
+                },
+                "cruelty_free": {
+                  "example": "any"
+                },
+                "vegan": {
+                  "example": "any"
+                },
+                "rating": {
+                  "example": "any"
+                },
+                "number_of_reviews": {
+                  "example": "any"
+                },
+                "availability": {
+                  "example": "any"
+                },
+                "link_to_product_page": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
